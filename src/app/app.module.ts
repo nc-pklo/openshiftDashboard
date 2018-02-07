@@ -11,6 +11,7 @@ import { EnvironmentComponent } from './components/environment/environment.compo
 import { HttpClientModule } from '@angular/common/http';
 import { EnvironmentsListComponent } from './components/environments-list/environments-list.component';
 import { EnvironmentsListService } from './services/environments-list.service';
+import { EnvironmentsLinksService } from './services/environments-links.service';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { EnvironmentsListService } from './services/environments-list.service';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [EnvironmentsListService],
+  providers: [EnvironmentsListService, EnvironmentsLinksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

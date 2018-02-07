@@ -19,7 +19,7 @@
     <span class="log-date">{{ environment.creationTimeStamp | date: 'short' }}</span>
 
     <div class="border border-secondary rounded p-1">
-      <button class="btn btn-xs">Links</button>
+      <button (click)="showLinks( environment.name )" class="btn btn-xs">Links</button>
       <button class="btn btn-xs">Apps</button>
       <button class="btn btn-xs">Endpoints</button>
       <button class="btn btn-xs">DBPorts</button>
