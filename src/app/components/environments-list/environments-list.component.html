@@ -1,18 +1,36 @@
 <div class="card card-body mb-3">
-  
-  <ul>
+
+  <!-- <ul>
     <li *ngFor="let environment of environmentsList">
         <h3>{{ environment.name }} {{ environment.creationTimeStamp | date }} </h3>
     </li>
-  </ul>
+  </ul> -->
 
 
 </div>
 
 
 <ul class="list-unstyled">
+  <!-- <li class="card card-body mb-2" *ngFor="let environment of environmentsList"> -->
+  <li class="list-group-item d-flex justify-content-between align-items-center mb-3" *ngFor="let environment of environmentsList">
 
+
+    <h3>{{ environment.name }} </h3>
+    <span class="log-date">{{ environment.creationTimeStamp | date: 'short' }}</span>
+
+    <div class="border border-secondary rounded p-1">
+      <button class="btn btn-xs">Links</button>
+      <button class="btn btn-xs">Apps</button>
+      <button class="btn btn-xs">Endpoints</button>
+      <button class="btn btn-xs">DBPorts</button>
+    </div>
+
+    <span>
+      <button class="btn btn-xs">ReDeploy</button>
+    </span>
+
+
+  </li>
 
 
 </ul>
-
