@@ -1,50 +1,38 @@
-<div class="card card-body mb-3">
-
-  <!-- <ul>
-    <li *ngFor="let environment of environmentsList">
-        <h3>{{ environment.name }} {{ environment.creationTimeStamp | date }} </h3>
-    </li>
-  </ul> -->
-
-
-</div>
-
-
 <ul class="list-unstyled">
 
   <li class="card card-body mb-2" *ngFor="let environment of environmentsList">
-  <!-- <li class="card card-body mb-2" *ngFor="let environment of environmentsList"> -->
-  <!-- <li class="list-group-item d-flex justify-content-between align-items-center mb-3" *ngFor="let environment of environmentsList"> -->
+    <!-- <li class="card card-body mb-2" *ngFor="let environment of environmentsList"> -->
+    <!-- <li class="list-group-item d-flex justify-content-between align-items-center mb-3" *ngFor="let environment of environmentsList"> -->
 
     <!-- ENV NAME -->
-    <span class="list-group-item d-flex justify-content-between align-items-center mb-0 bg-secondary rounded">
-      <h3>{{ environment.name }}</h3>
-      <span class="log-date">created: {{ environment.creationTimeStamp | date: 'short' }}</span>
-    </span>
+      <span class="list-group-item d-flex justify-content-between align-items-center mb-0 bg-light rounded">
+        <h3>{{ environment.name }}</h3>
+        <span class="log-date">created: {{ environment.creationTimeStamp | date: 'short' }}</span>
+      </span>
 
-    <!-- BUTTONS -->
-    <div class="border border-secondary rounded p-1 mb-3 bg-secondary">
-      <button (click)="showLinks( environment.name )" (click)="toggleShowLinks(environment)" class="btn btn-xs">Links</button>
-      <button class="btn btn-xs">Apps</button>
-      <button class="btn btn-xs">Endpoints</button>
-      <button class="btn btn-xs">DBPorts</button>
-      <button class="btn btn-xs btn-danger">ReDeploy</button>
-    </div>
+      <!-- BUTTONS -->
+      <div class="p-1 mb-3 ">
+        <button (click)="produceLinks( environment.name )" (click)="toggleShowLinks(environment)" class="btn btn-xs">Links</button>
+        <button class="btn btn-xs">Apps</button>
+        <button class="btn btn-xs">Endpoints</button>
+        <button class="btn btn-xs">DBPorts</button>
+        <button class="btn btn-xs btn-danger">ReDeploy</button>
+      </div>
 
     <!-- LINKS -->
     <div *ngIf="environment.showLinks">
       <ul class="list-group">
 
         <li class="list-group-item">
-          
-          
+
+
           <div class="row">
-              <div class="col-6 col-md-4">
-                  Environment Links
-              </div>
-              <div class="col col-md-8">
-                <button (click)="toggleShowLinks(environment)" class="btn btn-dark btn-sm">Close</button>
-              </div>
+            <div class="col-6 col-md-4">
+              <b>Environment Links</b>
+            </div>
+            <div class="col col-md-8">
+              <button (click)="toggleShowLinks(environment)" class="btn btn-dark btn-sm">Close</button>
+            </div>
           </div>
 
         </li>
@@ -52,13 +40,66 @@
         <li class="list-group-item">
           <div class="row">
             <div class="col-6 col-md-4">
-              aaa
+              PSRM
             </div>
             <div class="col col-md-8">
-              bbb
+              <a href="{{environmentLinks.PSRM}}">{{environmentLinks.PSRM}}</a>
             </div>
           </div>
         </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-6 col-md-4">
+              PSRM (no ssl login)
+            </div>
+            <div class="col col-md-8">
+              <a href="{{environmentLinks.PSRM2}}">{{environmentLinks.PSRM2}}</a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-6 col-md-4">
+              Test Portal
+            </div>
+            <div class="col col-md-8">
+              <a href="{{environmentLinks.TP}}">{{environmentLinks.TP}}</a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-6 col-md-4">
+              Batch Administration Website
+            </div>
+            <div class="col col-md-8">
+              <a href="{{environmentLinks.BAW}}">{{environmentLinks.BAW}}</a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-6 col-md-4">
+              Fordringshaverportal
+            </div>
+            <div class="col col-md-8">
+              <a href="{{environmentLinks.FHP}}">{{environmentLinks.FHP}}</a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-6 col-md-4">
+              Overview (OpenShift access required)
+            </div>
+            <div class="col col-md-8">
+              <a href="{{environmentLinks.OS}}">{{environmentLinks.OS}}</a>
+            </div>
+          </div>
+        </li>
+
+
+
 
 
 
@@ -70,4 +111,3 @@
 
   </li>
 </ul>
-

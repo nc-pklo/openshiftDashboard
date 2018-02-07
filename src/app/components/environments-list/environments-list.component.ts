@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Environment } from '../../models/Environmnet';
+import { EnvironmentLinks } from '../../models/EnvironmentLinks';
 import { EnvironmentsListService } from '../../services/environments-list.service';
 import { EnvironmentsLinksService } from '../../services/environments-links.service';
 
@@ -15,8 +16,8 @@ export class EnvironmentsListComponent implements OnInit {
 
   //parameters
   environmentsList : Environment[] ;
-  // environmentLinks: 
-  // hideLinks? : true ;
+  environmentLinks: EnvironmentLinks;
+
 
 
   constructor( private environmentsListService: EnvironmentsListService, private environemntsLinksSerrvice : EnvironmentsLinksService
@@ -29,7 +30,7 @@ export class EnvironmentsListComponent implements OnInit {
 
       //adding 4 properties for toggling views
       for (var i=0; i<this.environmentsList.length ; i++) {
-        this.environmentsList[i]["showLinks"]=true;
+        this.environmentsList[i]["showLinks"]=false;
         this.environmentsList[i]["showApps"]=true;
         this.environmentsList[i]["showEndpts"]=true;
         this.environmentsList[i]["showDBPorts"]=true;
@@ -39,15 +40,15 @@ export class EnvironmentsListComponent implements OnInit {
   }
 
   //LINKS
-  showLinks(environmentName:string){  //provides set of links to environmnet
-    var environmentLinks = this.environemntsLinksSerrvice.getEnvironmentsLinks();
-    environmentLinks.PSRM = environmentLinks.PSRM.replace('dock', environmentName);
-    environmentLinks.PSRM2 = environmentLinks.PSRM2.replace('dock', environmentName);
-    environmentLinks.TP = environmentLinks.TP.replace('dock', environmentName);
-    environmentLinks.BAW = environmentLinks.BAW.replace('dock', environmentName);
-    environmentLinks.FHP = environmentLinks.FHP.replace('dock', environmentName);
-    console.log(environmentLinks);
-    return environmentLinks;
+  produceLinks(environmentName:string){  //provides set of links to environmnet
+    // environment.showLinks=true;
+    var envLinks = this.environemntsLinksSerrvice.getEnvironmentsLinks();
+    envLinks.PSRM = envLinks.PSRM.replace('dock', environmentName);
+    envLinks.PSRM2 = envLinks.PSRM2.replace('dock', environmentName);
+    envLinks.TP = envLinks.TP.replace('dock', environmentName);
+    envLinks.BAW = envLinks.BAW.replace('dock', environmentName);
+    envLinks.FHP = envLinks.FHP.replace('dock', environmentName);
+    this.environmentLinks=envLinks;
   }
 
   toggleShowLinks(environment:Environment) {

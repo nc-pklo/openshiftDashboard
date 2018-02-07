@@ -21,7 +21,8 @@ export class EnvironmentsLinksService {
       "PSRM2" : "http://dock.inddr.dk/ouaf/loginPage.jsp?normal",
       "TP" : "http://dock.inddr.dk/test-portal/overview",
       "BAW" : "http://dock.inddr.dk/batch-administration-website/",
-      "FHP" : "http://fordringshaverportal-dock.inddr.dk"
+      "FHP" : "http://fordringshaverportal-dock.inddr.dk",
+      "OS" : "https://openshift.inddr.dk:8443/console/project/dock01/overview"
     }
   }
 
