@@ -22,7 +22,7 @@ export class EnvironmentsLinksService {
       "TP" : "http://dock.inddr.dk/test-portal/overview",
       "BAW" : "http://dock.inddr.dk/batch-administration-website/",
       "FHP" : "http://fordringshaverportal-dock.inddr.dk",
-      "OS" : "https://openshift.inddr.dk:8443/console/project/dock01/overview"
+      "OS" : "https://openshift.inddr.dk:8443/console/project/dock/overview"
     }
   }
 

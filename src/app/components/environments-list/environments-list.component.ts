@@ -1,23 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Environment } from '../../models/Environmnet';
 import { EnvironmentLinks } from '../../models/EnvironmentLinks';
 import { EnvironmentsListService } from '../../services/environments-list.service';
 import { EnvironmentsLinksService } from '../../services/environments-links.service';
+import { EnvironmentAppsComponent} from '../environment-apps/environment-apps.component'
+ 
 
 @Component({
   selector: 'app-environments-list',
   templateUrl: './environments-list.component.html',
-  styleUrls: ['./environments-list.component.css']
+  styleUrls: ['./environments-list.component.css'],
 })
-
 
 
 export class EnvironmentsListComponent implements OnInit {
 
-  //parameters
   environmentsList : Environment[] ;
   environmentLinks: EnvironmentLinks;
-
+  // //crosspassing
+  public envNameToExport :string;
+  @ViewChild(EnvironmentAppsComponent) environmentAppsComponent : EnvironmentAppsComponent; 
 
 
   constructor( private environmentsListService: EnvironmentsListService, private environemntsLinksSerrvice : EnvironmentsLinksService
@@ -27,16 +29,21 @@ export class EnvironmentsListComponent implements OnInit {
     this.environmentsListService.getEnvironments()
     .subscribe(data => { 
       this.environmentsList = data;
-
       //adding 4 properties for toggling views
       for (var i=0; i<this.environmentsList.length ; i++) {
         this.environmentsList[i]["showLinks"]=false;
-        this.environmentsList[i]["showApps"]=true;
-        this.environmentsList[i]["showEndpts"]=true;
-        this.environmentsList[i]["showDBPorts"]=true;
+        this.environmentsList[i]["showApps"]=false;
+        this.environmentsList[i]["showEndpts"]=false;
+        this.environmentsList[i]["showDBPorts"]=false;
       }
-      console.log(this.environmentsList);
     });
+  }
+
+  hideAll(environment:Environment) {
+    environment.showLinks=false;
+    environment.showApps=false;
+    environment.showDBPorts=false;
+    environment.showDBPorts=false;
   }
 
   //LINKS
@@ -48,12 +55,32 @@ export class EnvironmentsListComponent implements OnInit {
     envLinks.TP = envLinks.TP.replace('dock', environmentName);
     envLinks.BAW = envLinks.BAW.replace('dock', environmentName);
     envLinks.FHP = envLinks.FHP.replace('dock', environmentName);
+    envLinks.OS = envLinks.OS.replace('dock', environmentName);
     this.environmentLinks=envLinks;
   }
 
   toggleShowLinks(environment:Environment) {
     environment.showLinks=!environment.showLinks;
   }  
+
+  //APPS
+  toggleShowApps(environment:Environment) {
+    environment.showApps=!environment.showApps;
+  }  
+
+  sendEnvNameToExport(envName:string){
+    // this.envNameToExport.emit(envName);
+    // this.envNameToExport=envName;
+    // console.log(envName);
+    // this.environmentAppsComponent.getEnvironmentAppsList("dock01") ;
+  }
+  
+  // getEnvironmentApps(envName:string){
+  //   console.log("List.ts: " + envName)
+  //   this.environmentAppsComponent.getEnvironmentAppsList(envName);
+  // }
+
+
 
 
 
