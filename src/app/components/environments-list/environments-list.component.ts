@@ -58,7 +58,6 @@ export class EnvironmentsListComponent implements OnInit {
     envLinks.OS = envLinks.OS.replace('dock', environmentName);
     this.environmentLinks=envLinks;
   }
-
   toggleShowLinks(environment:Environment) {
     environment.showLinks=!environment.showLinks;
   }  

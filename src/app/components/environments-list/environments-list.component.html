@@ -1,11 +1,13 @@
 <ul class="list-unstyled"  >
 
-  <li class="card card-body mb-2" *ngFor="let environment of environmentsList">
+  <li class="card card-body mb-2 border-info" style="background-color:#f0f0f5
+  ;" *ngFor="let environment of environmentsList">
     <!-- <li class="card card-body mb-2" *ngFor="let environment of environmentsList"> -->
     <!-- <li class="list-group-item d-flex justify-content-between align-items-center mb-3" *ngFor="let environment of environmentsList"> -->
 
     <!-- ENV NAME -->
-      <span class="list-group-item d-flex justify-content-between align-items-center mb-0 bg-light rounded">
+      <span class="list-group-item d-flex justify-content-between align-items-center mb-0 rounded" style="background-color:#80ccff
+      ;">
         <h3>{{ environment.name }}</h3>
         <span class="log-date">created: {{ environment.creationTimeStamp | date: 'short' }}</span>
       </span>
@@ -20,11 +22,11 @@
       </div> -->
 
 
-      <div class="btn-group ">
-        <button (click)="produceLinks( environment.name )" (click)="toggleShowLinks(environment)"  (click)="sendEnvNameToExport( environment.name )" class="btn btn-xs">Links</button>
-        <button (click)="toggleShowApps(environment)"  class="btn btn-xs">Apps</button>
-        <button class="btn btn-xs">Endpoints</button>
-        <button class="btn btn-xs">DBPorts</button>
+      <div class="btn-group mt-1">
+        <button (click)="produceLinks( environment.name )" (click)="toggleShowLinks(environment)"  (click)="sendEnvNameToExport( environment.name )" class="btn btn-xs btn-primary">Links</button>
+        <button (click)="toggleShowApps(environment)"  class="btn btn-xs btn-primary">Apps</button>
+        <button class="btn btn-xs btn-primary">Endpoints</button>
+        <button class="btn btn-xs btn-primary">DBPorts</button>
         <button (click)="getEnvironmentApps(environment.name)" class="btn btn-xs btn-danger">ReDeploy</button>
       </div>
 
@@ -45,7 +47,7 @@
               <b>Environment Links</b>
             </div>
             <div class="col col-md-8">
-              <button (click)="toggleShowLinks(environment)" class="btn btn-dark btn-sm">Hide Environment Links</button>
+              <button (click)="toggleShowLinks(environment)" class="btn btn-outline-secondary btn-sm">Hide Environment Links</button>
             </div>
           </div>
         </li>
@@ -115,7 +117,7 @@
 
     <app-environment-apps [environmentName]="environment.name" #environmentAppsComponent *ngIf="environment.showApps" ></app-environment-apps>
 
-    <button (click)="hideAll(environment)" class="btn btn-outline-primary btn-sm" *ngIf="environment.showLinks || environment.showApps || environment.showEndpts || environment.showDBPorts ">Hide All {{environment.name}} properties</button>
+    <button (click)="hideAll(environment)" class="btn btn-outline-secondary btn-sm" *ngIf="environment.showLinks || environment.showApps || environment.showEndpts || environment.showDBPorts ">Hide  {{environment.name}} properties</button>
 
   </li>
 </ul>
