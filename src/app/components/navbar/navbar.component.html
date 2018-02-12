@@ -1,11 +1,28 @@
-<nav class="navbar navbar-dark bg-primary mb-4 .display-1">
+<nav class="navbar navbar-expand navbar-dark bg-primary mb-4">
   <div class="container">
 
-    <h1 href="#" >
+    <!-- <a routerLink="/" class="navbar-brand" >
       Docker Environments 
-    </h1>
+    </a> -->
+    <img routerLink="/" src="http://stratechery.com/wp-content/uploads/2014/12/docker.png" height="100">
 
-    <img src="http://stratechery.com/wp-content/uploads/2014/12/docker.png" height="100">
+    <div class="navbar-brand">
+      ICI-SKAT
+    </div>
+
+    <div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item navbar-brand" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item navbar-brand" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/environments" class="nav-link">Environments</a>
+        </li>
+        <li class="nav-item navbar-brand" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/deployment" class="nav-link">Deployment</a>
+        </li>
+      </ul>
+    </div>
     
 
   </div>

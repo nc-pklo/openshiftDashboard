@@ -62,22 +62,18 @@ export class EnvironmentsListComponent implements OnInit {
     environment.showLinks=!environment.showLinks;
   }  
 
-  //APPS
   toggleShowApps(environment:Environment) {
     environment.showApps=!environment.showApps;
   }  
 
+  toggleShowEndpts(environment:Environment) {
+    environment.showEndpts=!environment.showEndpts;
+  }  
+
   sendEnvNameToExport(envName:string){
-    // this.envNameToExport.emit(envName);
-    // this.envNameToExport=envName;
-    // console.log(envName);
-    // this.environmentAppsComponent.getEnvironmentAppsList("dock01") ;
   }
   
-  // getEnvironmentApps(envName:string){
-  //   console.log("List.ts: " + envName)
-  //   this.environmentAppsComponent.getEnvironmentAppsList(envName);
-  // }
+
 
 
 

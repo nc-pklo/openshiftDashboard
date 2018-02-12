@@ -14,6 +14,15 @@ import { EnvironmentsListService } from './services/environments-list.service';
 import { EnvironmentsLinksService } from './services/environments-links.service';
 import { EnvironmentsAppsService } from './services/environments-apps.service';
 import { EnvironmentAppsComponent } from './components/environment-apps/environment-apps.component';
+import { EnvironmentsEndptsService } from './services/environments-endpts.service';
+import { EnvironmentEndptsComponent } from './components/environment-endpts/environment-endpts.component';
+
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
+import { DeploymentComponent } from './components/deployment/deployment.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { DeploymentFormComponent } from './components/deployment-form/deployment-form.component';
+
 
 
 @NgModule({
@@ -23,13 +32,19 @@ import { EnvironmentAppsComponent } from './components/environment-apps/environm
     EnvironmentComponent,
     EnvironmentsListComponent,
     EnvironmentAppsComponent,
+    EnvironmentEndptsComponent,
+    HomeComponent,
+    DeploymentComponent,
+    NotFoundComponent,
+    DeploymentFormComponent,
 
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [EnvironmentsListService, EnvironmentsLinksService, EnvironmentsAppsService],
+  providers: [EnvironmentsListService, EnvironmentsLinksService, EnvironmentsAppsService, EnvironmentsEndptsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
