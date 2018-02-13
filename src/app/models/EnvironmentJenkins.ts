@@ -6,7 +6,7 @@ export interface EnvironmentJenkins {
   requestDate? : string,
   provisionDate? : string,
   provisionState? : string,
-  intergated? : boolean,
+  integrated? : boolean,
   visible? : boolean
   }
 

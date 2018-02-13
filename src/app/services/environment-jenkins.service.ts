@@ -6,9 +6,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 const httpOptions = {
-  // headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'application/json'  })
-  headers: new HttpHeaders({ 'Access-Control-Allow-Origin' : 'http://localhost:8088' })
+  // headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ })
+
 }
+
 
 @Injectable()
 export class EnvironmentJenkinsService {

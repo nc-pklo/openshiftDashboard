@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  showGifKis : boolean = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showGifKiss(){
+    this.showGifKis=!this.showGifKis;
   }
 
 }

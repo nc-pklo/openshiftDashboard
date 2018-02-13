@@ -1,8 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Environment } from '../../models/Environmnet';
-import { EnvironmentLinks } from '../../models/EnvironmentLinks';
+
 import { EnvironmentsListService } from '../../services/environments-list.service';
+
+import { EnvironmentLinks } from '../../models/EnvironmentLinks';
 import { EnvironmentsLinksService } from '../../services/environments-links.service';
+
 import { EnvironmentAppsComponent} from '../environment-apps/environment-apps.component'
  
 
@@ -17,7 +20,7 @@ export class EnvironmentsListComponent implements OnInit {
 
   environmentsList : Environment[] ;
   environmentLinks: EnvironmentLinks;
-  // //crosspassing
+  //crosspassing
   public envNameToExport :string;
   @ViewChild(EnvironmentAppsComponent) environmentAppsComponent : EnvironmentAppsComponent; 
 

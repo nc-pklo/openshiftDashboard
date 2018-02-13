@@ -24,6 +24,8 @@ import { DeploymentComponent } from './components/deployment/deployment.componen
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DeploymentFormComponent } from './components/deployment-form/deployment-form.component';
 
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { DeploymentFormComponent } from './components/deployment-form/deployment
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [EnvironmentsListService, EnvironmentsLinksService, EnvironmentsAppsService, EnvironmentsEndptsService, EnvironmentJenkinsService],
   bootstrap: [AppComponent]

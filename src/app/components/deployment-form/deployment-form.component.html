@@ -5,75 +5,49 @@
   <form (submit)="onSubmit($event)">
 
     <div class="form-group">
-      <label>Docker environment name</label>
-      <input type="text" class="form-control" name="dockerEnv" #dockerEnv>
+      <label> Name of openshift project to be deployed</label>
+      <input type="text" class="form-control" name="dockerEnv" [(ngModel)]="environmentJenkins.dockerEnv" placeholder="Project Name">
     </div>
 
     <div class="form-group">
-      <label>Requester</label>
-      <input type="text" class="form-control" name="requester" #requester>
+      <label>Requester </label>
+      <input type="text" class="form-control" name="requester" [(ngModel)]="environmentJenkins.requester" placeholder="Your Name">
     </div>
 
     <div class="form-group">
-      <label>ReleaseAll package</label>
-      <input type="number" class="form-control" name="releaseAll" #releaseAll>
+      <label> ReleasALL Build job Number</label>
+      <input type="number" class="form-control" name="releaseAll" [(ngModel)]="environmentJenkins.releaseAll" placeholder="ReleaseAll build job nr">
     </div>
 
     <div class="form-group">
-      <label>ReleaseTestUtilities package</label>
-      <input type="number" class="form-control" name="releaseTestUtilities" #releaseTestUtilities>
+      <label> Release Test Utilities Build job number</label>
+      <input type="number" class="form-control" name="releaseTestUtilities" [(ngModel)]="environmentJenkins.releaseTestUtilities"
+        placeholder="Release Test Utilities build job nr">
     </div>
 
-    <!-- <div class="form-group">
+    <div class="form-group">
       <label>Integrated: </label>
-      <input type="checkbox" class="" value=true name="integrated" #integrated>
-    </div>
-
-    <div class="form-group">
-      <label>Visible: </label>
-      <input type="checkbox" class="" value=true name="visible" #visible>
-    </div> -->
-
-    <!-- <div class="form-group">
-      <label>Integrated: </label>
-      <label>true
-        <input type='radio' name="integrated" value="true" #integrated>
+      <label>
+        <input type="radio" name="integrated" value='true' [(ngModel)]="environmentJenkins.integrated"> Yes
       </label>
-      <label>false
-        <input type='radio' name="integrated" value="false" #integrated>
-      </label>
-    </div> -->
-
-    <div class="form-group">
-      <label>Visible: </label>
-      <label>true
-        <input type='radio' name="visible" value='true' #visible>
-      </label>
-      <label>false
-        <input type='radio' name="visible" value='false' #visible>
+      <label>
+        <input type="radio" name="integrated" value='false' [(ngModel)]="environmentJenkins.integrated"> No
       </label>
     </div>
 
     <div class="form-group">
-      <select #integrated>
-        <label> Integated: 
-          <option value=false>false</option>
-          <option value=true>true</option>
-        </label>
-      </select>
+      <label>Visible:</label>
+      <label>
+        <input type="radio" name="visible" value='true' [(ngModel)]="environmentJenkins.visible"> Yes
+      </label>
+      <label>
+        <input type="radio" name="visible" value='false' [(ngModel)]="environmentJenkins.visible"> No
+      </label>
     </div>
 
 
-    <!-- <md-radio-group >
-          <md-radio-button [value]=true name="carOption">Car</md-radio-button>
-          <md-radio-button [value]=false name="busOption">Bus</md-radio-button>
-        </md-radio-group> -->
-
-
-
-
-    <button (click)="addEnvironment(dockerEnv.value, requester.value, releaseAll.value, releaseTestUtilities.value, integrated.value, visible.value)"
-      class="btn btn-block mb-3">Deploy new environment</button>
+    <button class="btn btn-block mb-3" [disabled]="environmentJenkins.dockerEnv == '' || environmentJenkins.requester == '' || environmentJenkins.releaseAll == null
+      || environmentJenkins.releaseTestUtilities == null || environmentJenkins.integrated == null || environmentJenkins.visible == null">Deploy new environment</button>
 
   </form>
 

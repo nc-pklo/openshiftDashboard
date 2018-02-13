@@ -1,9 +1,39 @@
-<h1>Welcome</h1>
-<p>This is Openshift Dashboard homePage</p>
+<div class="container">
 
-<button class="btn btn-secondary" routerLink="/environments" >Environments list</button>
+  <h1>Docker Openshift substitute</h1>
+  <h3>This tool enables monitoring and deployment of Docker environmnets</h3>
 
-<button class="btn btn-secondary">Deployment</button>
+  <hr>
 
-<h1>Docker Environments are provided by POPEYE team</h1>
-<img src="http://popeye.org/wp-content/uploads/2012/01/5135947024_popeye2_xlarge1.jpeg" alt="">
+  <p>
+    Click to go to Docker environments
+    <button class="btn btn-secondary" routerLink="/environments">Environments list</button>
+  </p>
+
+  <p>
+    Click to Deploy new Environmnet
+    <button class="btn btn-secondary" routerLink="/deployment">Deployment</button>
+  </p>
+
+
+  <hr>
+
+  <h4>To get information about Docker and Docker configuration proceed to:
+    <a href="https://iciskm.atlassian.net/wiki/spaces/ICINetcompany/pages/94148024/Docker+in+the+ICI+Project">Docker Confulence</a>
+  </h4>
+
+
+  <!-- <h5>Docker Environments are provided by POPEYE team</h5>
+  <img src="https://media1.tenor.com/images/835205a7fe13808985328fcd02112a6c/tenor.gif" alt="" width=200> -->
+
+
+  <hr>
+
+  <h5>If you find this tool useful,
+    <button class="btn m-2" (click)="showGifKiss()"> Click to thank Popeye team </button>
+    <div *ngIf=showGifKis>
+      <img src="https://78.media.tumblr.com/70aaaf85f18b067366c2b43ef56fca95/tumblr_oiog69PEYq1relg8bo2_500.gif" alt="">
+    </div>
+  </h5>
+
+</div>S

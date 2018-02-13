@@ -13,7 +13,7 @@
     <!-- BUTTONS -->
     <!-- <div class="p-1 mb-3 ">
         <button (click)="produceLinks( environment.name )" (click)="toggleShowLinks(environment)"  (click)="sendEnvNameToExport( environment.name )" class="btn btn-xs">Links</button>
-        <button (click)="toggleShowApps(environment)"  class="btn btn-xs">Apps</button>
+        <button (click)="toggleShowApps(environment)"  class="btn btn-xs" >Apps</button>
         <button class="btn btn-xs">Endpoints</button>
         <button class="btn btn-xs">DBPorts</button>
         <button (click)="getEnvironmentApps(environment.name)" class="btn btn-xs btn-danger">ReDeploy</button>
@@ -25,7 +25,7 @@
         class="btn btn-xs btn-primary" [class.active]="environment.showLinks">Links</button>
       <button (click)="toggleShowApps(environment)" [class.active]="environment.showApps" class="btn btn-xs btn-primary">Apps</button>
       <button (click)="toggleShowEndpts(environment)" [class.active]="environment.showEndpts" class="btn btn-xs btn-primary">Endpoints</button>
-      <!-- <button (class)="btn btn-xs btn-primary" >DBPorts</button> -->
+      <button class="btn btn-xs btn-primary" >DBPorts</button>
       <button (click)="getEnvironmentApps(environment.name)" class="btn btn-xs btn-danger">ReDeploy</button>
     </div>
 
