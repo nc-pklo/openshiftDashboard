@@ -1,3 +1,80 @@
-<p>
-  deployment-form works!
-</p>
+<div class="card card-body mb-3">
+  <h2>Deployment form</h2>
+  <hr>
+
+  <form (submit)="onSubmit($event)">
+
+    <div class="form-group">
+      <label>Docker environment name</label>
+      <input type="text" class="form-control" name="dockerEnv" #dockerEnv>
+    </div>
+
+    <div class="form-group">
+      <label>Requester</label>
+      <input type="text" class="form-control" name="requester" #requester>
+    </div>
+
+    <div class="form-group">
+      <label>ReleaseAll package</label>
+      <input type="number" class="form-control" name="releaseAll" #releaseAll>
+    </div>
+
+    <div class="form-group">
+      <label>ReleaseTestUtilities package</label>
+      <input type="number" class="form-control" name="releaseTestUtilities" #releaseTestUtilities>
+    </div>
+
+    <!-- <div class="form-group">
+      <label>Integrated: </label>
+      <input type="checkbox" class="" value=true name="integrated" #integrated>
+    </div>
+
+    <div class="form-group">
+      <label>Visible: </label>
+      <input type="checkbox" class="" value=true name="visible" #visible>
+    </div> -->
+
+    <!-- <div class="form-group">
+      <label>Integrated: </label>
+      <label>true
+        <input type='radio' name="integrated" value="true" #integrated>
+      </label>
+      <label>false
+        <input type='radio' name="integrated" value="false" #integrated>
+      </label>
+    </div> -->
+
+    <div class="form-group">
+      <label>Visible: </label>
+      <label>true
+        <input type='radio' name="visible" value='true' #visible>
+      </label>
+      <label>false
+        <input type='radio' name="visible" value='false' #visible>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <select #integrated>
+        <label> Integated: 
+          <option value=false>false</option>
+          <option value=true>true</option>
+        </label>
+      </select>
+    </div>
+
+
+    <!-- <md-radio-group >
+          <md-radio-button [value]=true name="carOption">Car</md-radio-button>
+          <md-radio-button [value]=false name="busOption">Bus</md-radio-button>
+        </md-radio-group> -->
+
+
+
+
+    <button (click)="addEnvironment(dockerEnv.value, requester.value, releaseAll.value, releaseTestUtilities.value, integrated.value, visible.value)"
+      class="btn btn-block mb-3">Deploy new environment</button>
+
+  </form>
+
+</div>

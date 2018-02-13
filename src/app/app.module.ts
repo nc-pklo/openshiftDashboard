@@ -16,6 +16,7 @@ import { EnvironmentsAppsService } from './services/environments-apps.service';
 import { EnvironmentAppsComponent } from './components/environment-apps/environment-apps.component';
 import { EnvironmentsEndptsService } from './services/environments-endpts.service';
 import { EnvironmentEndptsComponent } from './components/environment-endpts/environment-endpts.component';
+import { EnvironmentJenkinsService } from './services/environment-jenkins.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
@@ -44,7 +45,7 @@ import { DeploymentFormComponent } from './components/deployment-form/deployment
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [EnvironmentsListService, EnvironmentsLinksService, EnvironmentsAppsService, EnvironmentsEndptsService],
+  providers: [EnvironmentsListService, EnvironmentsLinksService, EnvironmentsAppsService, EnvironmentsEndptsService, EnvironmentJenkinsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
