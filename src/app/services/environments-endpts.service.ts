@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class EnvironmentsEndptsService {
 
-  environmentEndptsList: EnvironmentEndpts[];
+  // environmentEndptsList: EnvironmentEndpts[]; <-- To delete also in other
 
   environmentEndptsListUrl : string = '';
   genericEnvironmentEndptsListUrl = 'http://localhost:8088/api/dashboard/environment/dock/public-endpoint';

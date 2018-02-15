@@ -25,7 +25,7 @@
         class="btn btn-xs btn-primary" [class.active]="environment.showLinks">Links</button>
       <button (click)="toggleShowApps(environment)" [class.active]="environment.showApps" class="btn btn-xs btn-primary">Apps</button>
       <button (click)="toggleShowEndpts(environment)" [class.active]="environment.showEndpts" class="btn btn-xs btn-primary">Endpoints</button>
-      <button class="btn btn-xs btn-primary" >DBPorts</button>
+      <button (click)="toggleShowDbport(environment)" [class.active]="environment.showDbport" class="btn btn-xs btn-primary" >DBPorts</button>
       <button (click)="getEnvironmentApps(environment.name)" class="btn btn-xs btn-danger">ReDeploy</button>
     </div>
 
@@ -119,6 +119,9 @@
 
     <button (click)="toggleShowEndpts(environment)" class="btn btn-outline-primary btn-sm mt-1" *ngIf="environment.showEndpts">Hide {{environment.name}} Endpoints list</button>
     <app-environment-endpts [environmentName]="environment.name" *ngIf="environment.showEndpts"></app-environment-endpts>
+
+    <button (click)="toggleShowDbport(environment)" class="btn btn-outline-primary btn-sm mt-1" *ngIf="environment.showDBPorts">Hide {{environment.name}} DataBase ports</button>
+    <app-environment-dbport [environmentName]="environment.name" *ngIf="environment.showDBPorts"></app-environment-dbport>
 
 
 

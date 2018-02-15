@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class EnvironmentsAppsService {
 
-  environmentAppsList: EnvironmentApps[];
+  // environmentAppsList: EnvironmentApps[];
 
  
   environmentAppsListUrl : string = '';

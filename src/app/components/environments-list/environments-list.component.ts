@@ -40,7 +40,7 @@ export class EnvironmentsListComponent implements OnInit {
         this.environmentsList[i]["showDBPorts"]=false;
       }
     });
-  }
+  } 
 
   hideAll(environment:Environment) {
     environment.showLinks=false;
@@ -71,6 +71,10 @@ export class EnvironmentsListComponent implements OnInit {
 
   toggleShowEndpts(environment:Environment) {
     environment.showEndpts=!environment.showEndpts;
+  }  
+
+  toggleShowDbport(environment:Environment) {
+    environment.showDBPorts=!environment.showDBPorts;
   }  
 
   sendEnvNameToExport(envName:string){

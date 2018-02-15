@@ -1,8 +1,8 @@
-<div class="card card-body mb-3">
+<div class="card card-body mb-3" style="background-color:#f0f0f5">
   <h2>Deployment form</h2>
-  <hr>
+  <hr> 
 
-  <form (submit)="onSubmit($event)">
+  <form (submit)="onSubmit($event)"  >
 
     <div class="form-group">
       <label> Name of openshift project to be deployed</label>
@@ -47,7 +47,10 @@
 
 
     <button class="btn btn-block mb-3" [disabled]="environmentJenkins.dockerEnv == '' || environmentJenkins.requester == '' || environmentJenkins.releaseAll == null
-      || environmentJenkins.releaseTestUtilities == null || environmentJenkins.integrated == null || environmentJenkins.visible == null">Deploy new environment</button>
+      || environmentJenkins.releaseTestUtilities == null || environmentJenkins.integrated == null || environmentJenkins.visible == null"
+      [class.btn-success]="!(environmentJenkins.dockerEnv == '' || environmentJenkins.requester == '' || environmentJenkins.releaseAll == null
+      || environmentJenkins.releaseTestUtilities == null || environmentJenkins.integrated == null || environmentJenkins.visible == null)"
+      >Deploy new environment</button>
 
   </form>
 

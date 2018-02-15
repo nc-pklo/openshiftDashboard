@@ -7,6 +7,7 @@ import { EnvironmentJenkins } from '../../models/EnvironmentJenkins';
 import { EnvironmentJenkinsService } from '../../services/environment-jenkins.service';
 
 
+
 @Component({
   selector: 'app-deployment-form',
   templateUrl: './deployment-form.component.html',
@@ -39,6 +40,19 @@ export class DeploymentFormComponent implements OnInit {
       .subscribe(environmentJenkins => {
         console.log(environmentJenkins);
       });
+      alert("Request to Add an environment has been succesfully issued !");
+    this.environmentJenkins={
+      dockerEnv: '',
+      requester: '',
+      releaseAll: null,
+      releaseTestUtilities: null,
+      requestDate: null,
+      provisionDate: null,
+      provisionState: null,
+      integrated: null,
+      visible: null
+    };
+    
   }
 
 

@@ -1,0 +1,11 @@
+.btn-xl {
+  padding: 20px 30px;
+  font-size: 20px;
+  border-radius: 10px;
+  width:70%;   
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+  }

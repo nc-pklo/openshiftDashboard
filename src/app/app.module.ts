@@ -25,6 +25,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DeploymentFormComponent } from './components/deployment-form/deployment-form.component';
 
 import { FormsModule } from '@angular/forms';
+import { EnvironmentDbportService } from './services/environment-dbport.service';
+import { EnvironmentDbportComponent } from './components/environment-dbport/environment-dbport.component';
 
 
 
@@ -40,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     DeploymentComponent,
     NotFoundComponent,
     DeploymentFormComponent,
+    EnvironmentDbportComponent,
 
   ],
   imports: [
@@ -48,7 +51,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [EnvironmentsListService, EnvironmentsLinksService, EnvironmentsAppsService, EnvironmentsEndptsService, EnvironmentJenkinsService],
+  providers: [EnvironmentsListService, EnvironmentsLinksService, EnvironmentsAppsService, EnvironmentsEndptsService, EnvironmentJenkinsService, EnvironmentDbportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

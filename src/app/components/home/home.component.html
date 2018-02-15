@@ -1,39 +1,59 @@
-<div class="container">
+<div class="jumbotron text-center">
+  <h1>
+    <strong>Docker Openshift substitute</strong>
+  </h1>
+  <br>
+  <p class="lead">Tool enabling monitoring and deployment of ICI-SKAT Docker environmnets</p>
+</div>
 
-  <h1>Docker Openshift substitute</h1>
-  <h3>This tool enables monitoring and deployment of Docker environmnets</h3>
 
-  <hr>
 
+
+<div class="row marketing text-center">
+
+  <div class=" col-lg-6 pt-3 border rounded ">
+    <h1>
+      <button class="btn btn-xl btn-outline-primary" routerLink="/environments">Environments list and Monitoring</button>
+    </h1>
+    <p>Click to see a list of provisioned Docker environments and get information about its deployment, running applications,
+      endpoints, database port and useful links. </p>
+  </div>
+  <div class=" col-lg-6 pt-3 border rounded ">
+    <h4>
+      <button class="btn btn-xl btn-outline-primary" routerLink="/deployment">Docker Environment Deployment</button>
+    </h4>
+    <p>Click to order new testing Docker environmnet with gicing basic environment information and just one click !</p>
+  </div>
+
+
+
+</div>
+ <br>
+
+<div class="col-lg-7 center-block col-centered text-center ">
+
+  <h5>Are you wondering:</h5>
   <p>
-    Click to go to Docker environments
-    <button class="btn btn-secondary" routerLink="/environments">Environments list</button>
+    What is docker?
+    <br> How does it work?
+    <br> How it is configured?
+    <br> Do you like reading documentation?
+    <br>
+
   </p>
+  <a target="_blank" class="btn btn-lg btn-outline-primary" href="https://iciskm.atlassian.net/wiki/spaces/ICINetcompany/pages/94148024/Docker+in+the+ICI+Project">Find answers: Docker documentation</a>
 
-  <p>
-    Click to Deploy new Environmnet
-    <button class="btn btn-secondary" routerLink="/deployment">Deployment</button>
-  </p>
+</div>
 
+<hr><hr>
 
-  <hr>
+<div class="col-lg-7 center-block col-centered text-center ">
 
-  <h4>To get information about Docker and Docker configuration proceed to:
-    <a href="https://iciskm.atlassian.net/wiki/spaces/ICINetcompany/pages/94148024/Docker+in+the+ICI+Project">Docker Confulence</a>
-  </h4>
-
-
-  <!-- <h5>Docker Environments are provided by POPEYE team</h5>
-  <img src="https://media1.tenor.com/images/835205a7fe13808985328fcd02112a6c/tenor.gif" alt="" width=200> -->
-
-
-  <hr>
-
-  <h5>If you find this tool useful,
-    <button class="btn m-2" (click)="showGifKiss()"> Click to thank Popeye team </button>
+  <h5>Docker Environmnets are created by Popeye Devo-Ops team. 
+    <button class="btn btn-lg btn-outline-success m-2" (click)="showGifKiss()"> Click here to thank Popeye</button>
     <div *ngIf=showGifKis>
       <img src="https://78.media.tumblr.com/70aaaf85f18b067366c2b43ef56fca95/tumblr_oiog69PEYq1relg8bo2_500.gif" alt="">
     </div>
   </h5>
 
-</div>S
+</div>

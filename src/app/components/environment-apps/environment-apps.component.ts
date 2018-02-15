@@ -19,8 +19,6 @@ export class EnvironmentAppsComponent implements OnInit {
   }
 
   getEnvironmentAppsList() {
-      console.log("environmentApps.ts: " + this.environmentName);
-  
       this.environmentsAppsService.getEnvironmentAppsList(this.environmentName)
       .subscribe(data => {
         this.environmentAppsList = data;
